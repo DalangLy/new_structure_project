@@ -6,7 +6,7 @@ class DeleteTaxTypeUseCase implements IDeleteUseCase{
   DeleteTaxTypeUseCase(this._repository);
 
   @override
-  Future<String> delete({required DeleteEntity entity}) {
+  Future<String> call({required DeleteEntity entity}) {
     return _repository.delete(entity: entity);
   }
 }

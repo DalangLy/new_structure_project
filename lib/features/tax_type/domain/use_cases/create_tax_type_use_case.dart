@@ -6,7 +6,7 @@ class CreateTaxTypeUseCase implements ICreateUseCase{
   CreateTaxTypeUseCase(this._repository);
 
   @override
-  Future<ResponseEntity> create({required RequestEntity entity}) {
+  Future<ResponseEntity> call({required RequestEntity entity}) {
     return _repository.create(entity: entity);
   }
 }

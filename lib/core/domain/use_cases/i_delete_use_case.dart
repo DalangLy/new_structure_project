@@ -1,5 +1,5 @@
 import '../domain_export.dart';
 
 abstract class IDeleteUseCase{
-  Future<String> delete({required DeleteEntity entity,});
+  Future<String> call({required DeleteEntity entity,});
 }

@@ -6,7 +6,7 @@ class GetAllTaxTypesUseCase implements IGetUseCase{
   GetAllTaxTypesUseCase(this._repository);
 
   @override
-  Future<List<ResponseEntity>> get() {
+  Future<List<ResponseEntity>> call() {
     return _repository.get();
   }
 }

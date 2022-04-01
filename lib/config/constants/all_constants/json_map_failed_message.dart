@@ -1,3 +1,3 @@
 String mappingFailedMessage<T>(){
-  return 'Mapping from Json to ${T.runtimeType.toString()} Failed';
+  return 'Mapping from Json to $T Failed';
 }

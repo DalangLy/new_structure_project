@@ -5,8 +5,6 @@ abstract class GetAllTaxTypesEvent extends Equatable {
 }
 
 class GetAllTaxTypes extends GetAllTaxTypesEvent {
-  const GetAllTaxTypes();
-
   @override
   List<Object> get props => [];
 }

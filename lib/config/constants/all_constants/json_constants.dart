@@ -7,7 +7,7 @@ DateTime createdDate({required Map<String, dynamic> json,}){
 }
 
 DateTime? modifiedDate({required Map<String, dynamic> json,}){
-  return json['md'] ?? DateTime.parse(json['md'] as String);
+  return json['md'] == null ? null : DateTime.parse(json['md'] as String);
 }
 
 String createdUserId({required Map<String, dynamic> json,}){
@@ -15,5 +15,5 @@ String createdUserId({required Map<String, dynamic> json,}){
 }
 
 String? modifiedUserId({required Map<String, dynamic> json,}){
-  return json['muid'] as String;
+  return json['muid'] as String?;
 }
