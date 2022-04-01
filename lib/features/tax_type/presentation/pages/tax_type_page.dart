@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/core_export.dart';
 import '../../tax_type_export.dart';
 
 class TaxTypePage extends StatefulWidget {
@@ -27,7 +28,7 @@ class _TaxTypePageState extends State<TaxTypePage> {
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(state.message)));
         }
       },
-      child: Scaffold(
+      child: DScaffold(
         body: SafeArea(
           child: Center(
             child: BlocBuilder<GetAllTaxTypesBloc, GetAllTaxTypesState>(
