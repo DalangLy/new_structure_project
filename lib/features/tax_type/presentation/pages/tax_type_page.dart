@@ -29,6 +29,10 @@ class _TaxTypePageState extends State<TaxTypePage> {
         }
       },
       child: DScaffold(
+        breadCrumbs: const [
+          DBreadCrumb(title: 'Tax Type', path: '/'),
+          DBreadCrumb(title: 'Add Tax Type',)
+        ],
         body: SafeArea(
           child: Center(
             child: BlocBuilder<GetAllTaxTypesBloc, GetAllTaxTypesState>(

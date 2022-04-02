@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 class DScaffold extends StatelessWidget {
@@ -8,7 +9,7 @@ class DScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return _CustomScaffold(
-      appBar: const _CustomAppBar(),
+      appBar: _CustomAppBar(breadCrumbs: breadCrumbs,),
       body: body,
     );
   }
@@ -39,8 +40,36 @@ class _CustomScaffold extends StatelessWidget {
 }
 
 
-class _CustomAppBar extends StatelessWidget {
-  const _CustomAppBar({Key? key}) : super(key: key);
+class _CustomAppBar extends StatefulWidget {
+  final List<DBreadCrumb> breadCrumbs;
+  const _CustomAppBar({Key? key, required this.breadCrumbs,}) : super(key: key);
+
+  @override
+  State<_CustomAppBar> createState() => _CustomAppBarState();
+}
+
+class _CustomAppBarState extends State<_CustomAppBar> {
+  final List<Widget> _breadCrumbs = [];
+  @override
+  void initState() {
+    super.initState();
+
+    for (var element in widget.breadCrumbs) {
+      final bool isLast = widget.breadCrumbs.indexOf(element) == (widget.breadCrumbs.length - 1);
+      if(isLast){
+        _breadCrumbs.add(_DBreadCrumbItem(title: element.title, path: element.path));
+      }
+      else {
+        _breadCrumbs.add(_DBreadCrumbItem(title: element.title, path: element.path));
+        const Text(' / ');
+      }
+    }
+
+    //refresh ui
+    setState(() {
+
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,40 +77,41 @@ class _CustomAppBar extends StatelessWidget {
       height: 60,
       child: Row(
         children: [
-          IconButton(onPressed: (){}, icon: const Icon(Icons.chevron_left,),),
-          ConstrainedBox(
-            constraints: const BoxConstraints(
-              minWidth: 50,
-              maxWidth: 120,
-            ),
-            child: Tooltip(
-              message: 'Record Status Type',
-              child: TextButton(
-                onPressed: (){},
-                child: const Text('Record Status Type', overflow: TextOverflow.ellipsis, maxLines: 1,),
-              ),
-            ),
+          IconButton(
+            onPressed: (){
+              AutoRouter.of(context).pop();
+            },
+            icon: const Icon(Icons.chevron_left,),
           ),
-          const Text(' / '),
-          ConstrainedBox(
-            constraints: const BoxConstraints(
-              minWidth: 50,
-              maxWidth: 120,
-            ),
-            child: Tooltip(
-              message: 'Add Record Status Type',
-              child: TextButton(
-                onPressed: (){},
-                child: const Text('Add Record Status Type', overflow: TextOverflow.ellipsis, maxLines: 1,),
-              ),
-            ),
-          ),
-          const Spacer(),
-          IconButton(onPressed: (){}, icon: const Icon(Icons.filter_alt),),
-          IconButton(onPressed: (){}, icon: const Icon(Icons.refresh),),
-          IconButton(onPressed: (){}, icon: const Icon(Icons.add),),
+          ..._breadCrumbs,
         ],
       ),
     );
   }
 }
+
+class _DBreadCrumbItem extends StatelessWidget {
+  final String title;
+  final String? path;
+  const _DBreadCrumbItem({Key? key, required this.title, this.path,}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ConstrainedBox(
+      constraints: const BoxConstraints(
+        minWidth: 50,
+        maxWidth: 120,
+      ),
+      child: Tooltip(
+        message: title,
+        child: TextButton(
+          onPressed: path == null ? null : (){
+            AutoRouter.of(context).pushNamed(path!);
+          },
+          child: const Text('Record Status Type', overflow: TextOverflow.ellipsis, maxLines: 1,),
+        ),
+      ),
+    );
+  }
+}
+
