@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:new_rule/core/core_export.dart';
+import '../../../../../app_vendor/app_vendor_export.dart';
 
 part 'get_all_tax_types_event.dart';
 part 'get_all_tax_types_state.dart';

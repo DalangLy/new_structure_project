@@ -1,6 +1,5 @@
-import '../../../../core/core_export.dart';
-import '../../domain/repositories/i_tax_type_repository.dart';
-import '../data_sources/remote/i_tax_type_remote_data_source.dart';
+import '../../../../../app_vendor/app_vendor_export.dart';
+import '../../tax_type_export.dart';
 
 class TaxTypeRepository implements ITaxTypeRepository{
   final ITaxTypeRemoteDataSource _remoteDataSource;

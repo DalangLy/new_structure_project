@@ -1,4 +1,4 @@
-import '../../../domain/domain_export.dart';
+import '../../../tax_type_export.dart';
 
 class TaxTypeRequestModel extends TaxTypeRequest {
   TaxTypeRequestModel(

@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:dio/dio.dart';
-import '../../../../../core/core_export.dart';
+import '../../../../../app_vendor/app_vendor_export.dart';
 import '../../../tax_type_export.dart';
 
 class TaxTypeRemoteDataSource implements ITaxTypeRemoteDataSource{

@@ -1,4 +1,4 @@
-import '../../../../core/core_export.dart';
+import '../../../../../app_vendor/app_vendor_export.dart';
 
 class DeleteTaxTypeUseCase implements IDeleteUseCase{
   final IDeleteRepository _repository;

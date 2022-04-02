@@ -1,4 +1,4 @@
-import 'package:new_rule/core/domain/entities/response_entity.dart';
+import '../../../../../app_vendor/app_vendor_export.dart';
 
 class TaxType extends ResponseEntity {
   TaxType(

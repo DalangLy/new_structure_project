@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:new_rule/features/tax_type/domain/domain_export.dart';
-import 'package:new_rule/features/tax_type/presentation/blocs/create/create_tax_type_bloc.dart';
+
+import '../../tax_type_export.dart';
 
 class AddTaxTypePage extends StatelessWidget {
   const AddTaxTypePage({Key? key}) : super(key: key);
