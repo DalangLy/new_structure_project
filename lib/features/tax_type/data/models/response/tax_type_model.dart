@@ -1,4 +1,4 @@
-import 'package:new_rule/core/errors/json_map_failure.dart';
+import 'package:new_rule/core/errors/all_failures/json_map_failure.dart';
 import 'package:new_rule/features/tax_type/domain/entities/response/tax_type.dart';
 import 'package:new_rule/config/constants/constant_export.dart';
 
