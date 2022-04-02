@@ -13,8 +13,9 @@ class AddTaxTypePage extends StatelessWidget {
         child: Center(
           child: ElevatedButton(
             onPressed: (){
-              final TaxTypeRequest data = TaxTypeRequest('code', 'description');
-              BlocProvider.of<CreateTaxTypeBloc>(context).create(data: data);
+              //final TaxTypeRequest data = TaxTypeRequest('code', 'description');
+              final TaxTypeRequestTwo dataTwo = TaxTypeRequestTwo('id', 'code');
+              BlocProvider.of<CreateTaxTypeBloc>(context).create(data: dataTwo);
             },
               child: const Text('Add Tax Type'),
           ),

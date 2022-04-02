@@ -12,8 +12,8 @@ class TaxTypeRemoteDataSource implements ITaxTypeRemoteDataSource{
   @override
   Future<ResponseEntity> create({required RequestEntity entity}) async{
 
-    final TaxTypeRequest tt = entity as TaxTypeRequest;
-    final TaxTypeRequestModel model = TaxTypeRequestModel.fromEntity(tt);
+    final TaxTypeRequestTwo tt = entity as TaxTypeRequestTwo;
+    final TaxTypeRequestTwoModel model = TaxTypeRequestTwoModel.fromEntity(tt);
     final Map<String, dynamic> json = model.toJson();
 
     throw UnimplementedError();

@@ -1,5 +1,3 @@
-import 'package:new_rule/core/core_export.dart';
-
 import '../../../domain/domain_export.dart';
 
 class TaxTypeRequestModel extends TaxTypeRequest {
