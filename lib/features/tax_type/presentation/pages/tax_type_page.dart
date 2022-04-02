@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -38,12 +39,29 @@ class _TaxTypePageState extends State<TaxTypePage> {
             child: BlocBuilder<GetAllTaxTypesBloc, GetAllTaxTypesState>(
               builder: (context, state) {
                 if (state is GetAllTaxTypesSuccess) {
-                  return Text(state.data.length.toString());
+                  return Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(state.data.length.toString()),
+                      const Divider(),
+                      ElevatedButton(
+                        onPressed: (){
+                          AutoRouter.of(context).pushNamed('add');
+                        },
+                        child: const Text('Add Tax Type'),
+                      ),
+                    ],
+                  );
                 }
                 else if (state is GetAllTaxTypesInProgress) {
                   return const CircularProgressIndicator();
                 }
-                return const Text('Tax Type List');
+                return ElevatedButton(
+                  onPressed: (){
+                    AutoRouter.of(context).pushNamed('add');
+                  },
+                  child: const Text('Add Tax Type'),
+                );
               },
             ),
           ),

@@ -1,4 +1,4 @@
-export 'entities/request/tax_type.dart';
+export 'entities/request/tax_type_request.dart';
 export 'entities/response/tax_type.dart';
 export 'repositories/i_tax_type_repository.dart';
 export 'use_cases/create_tax_type_use_case.dart';

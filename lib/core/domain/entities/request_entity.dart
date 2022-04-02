@@ -1,3 +1,1 @@
-abstract class RequestEntity{
-
-}
+abstract class RequestEntity{}
